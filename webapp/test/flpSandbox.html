@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>UI5Con 2024: Let's test UI5 in 2024</title>
+
+        <script>
+            window["sap-ushell-config"] = {
+                defaultRenderer: "fiori2",
+                applications: {
+                    "Walkthrough-display": {
+                        title: "Hello World",
+                        description: "Let's test UI5 in 2024",
+                        additionalInformation: "SAPUI5.Component=ui5con2024",
+                        applicationType: "URL",
+                        url: "../",
+                        navigationMode: "embedded",
+                    },
+                    "dummyApplication-display": {
+                        title: "Default Application",
+                        additionalInformation: "SAPUI5.Component=sap.ushell.demo.FioriSandboxDefaultApp",
+                        applicationType: "URL",
+                        url: "https://sapui5.hana.ondemand.com/test-resources/sap/ushell/demoapps/FioriSandboxDefaultApp",
+                    },
+                },
+            };
+        </script>
+
+        <script src="../test-resources/sap/ushell/bootstrap/sandbox.js"></script>
+        <script id="sap-ui-bootstrap" src="../resources/sap-ui-core.js" data-sap-ui-libs="sap.m, sap.ushell" data-sap-ui-compatVersion="edge" data-sap-ui-theme="sap_horizon" data-sap-ui-frameOptions="allow" data-sap-ui-bindingSyntax="complex"></script>
+        <script>
+            sap.ui.getCore().attachInit(function () {
+                sap.ushell.Container.createRenderer().placeAt("content");
+            });
+        </script>
+    </head>
+    <body class="sapUShellFullHeight" id="content"></body>
+</html>

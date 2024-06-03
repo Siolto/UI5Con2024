@@ -9,12 +9,6 @@ export default class CommonPage extends Opa5 {
         const oOptions = oOptionsParameter || { intent: "Shell-home" };
         return this.waitFor({
             success: function () {
-                // restart the mock server every time the application is opened
-                // if (!(oOptions && oOptions.resetMockData === false)) {
-                //     mockserver.getMockServer().destroy();
-                //     mockserver.init();
-                // }
-
                 // create new instance to reset hash
                 new HashChanger().setHash(oOptions.intent + (oOptions.hash ? "&/" + oOptions.hash : ""));
             },
@@ -24,8 +18,12 @@ export default class CommonPage extends Opa5 {
     iLeaveMyFLPApp() {
         return this.waitFor({
             success: function () {
+                // reset the mockdata every time the application is closed
+                fetch("http://localhost:8080/V2/Northwind/Northwind.svc/$metadata/reload", {
+                    method: "POST",
+                });
                 new HashChanger().setHash("Shell-home");
-            }
+            },
         });
     }
 }

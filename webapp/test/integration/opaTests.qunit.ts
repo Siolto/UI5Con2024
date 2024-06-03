@@ -1,4 +1,4 @@
-// @ts-expect-error unknown import
+// @ts-expect-error ushell.container can not be found
 import Container from "sap/ushell/Container";
 import includeStylesheet from "sap/ui/dom/includeStylesheet";
 

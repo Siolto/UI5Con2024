@@ -1,0 +1,27 @@
+{
+  "name": "incidents",
+  "version": "0.0.1",
+  "description": "SAP Fiori elements",
+  "keywords": [
+    "ui5",
+    "openui5",
+    "sapui5"
+  ],
+  "main": "webapp/index.html",
+  "scripts": {
+    "deploy": "npx -p @sap/ux-ui5-tooling fiori add deploy-config cf",
+    "test": "karma start --singleRun",
+    "test:wdi5": "wdio run wdio.conf.js --headless",
+    "serve": "ui5 serve --port 8088"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^3",
+    "@wdio/cli": "^8",
+    "detect-libc": "^2.0.3",
+    "@wdio/local-runner": "^8",
+    "@wdio/mocha-framework": "^8",
+    "@wdio/spec-reporter": "^8",
+    "wdio-ui5-service": "*",
+    "@sap-ux/ui5-middleware-fe-mockserver": "latest"
+  }
+}

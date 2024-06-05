@@ -1,7 +1,7 @@
 import HashChanger from "sap/ui/core/routing/HashChanger";
 import Opa5 from "sap/ui/test/Opa5";
+// @ts-expect-error unknown import
 import Container from "sap/ushell/Container";
-
 /**
  * @namespace ui5con2024.test.integration.pages
  */

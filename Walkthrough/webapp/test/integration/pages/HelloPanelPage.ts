@@ -19,7 +19,6 @@ export default class HelloPanelPage extends CommonPage {
         });
     }
 
-
     // Assertions
     iShouldSeeTheHelloDialog() {
         return this.waitFor({
